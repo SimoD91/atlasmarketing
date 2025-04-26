@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="Atlas Marketing" />
+    <title></title>
+<!-- Script Navbar Transparent Dopo Scroll -->
+<script>
+    let navi2 = document.querySelector("#HeaderContainer");
+    let navi1 = document.querySelector("#navbar");
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 40) {
+            navi2.style.transition = "all 0.6s";
+            navi2.style.backgroundColor = "rgba(255, 255, 255, 0.81)";
+            navi2.style.boxShadow = "1px 1px 10px #c3c3c39c";
+            navi1.style.paddingTop = "0";
+            navi1.style.paddingBottom = "0";
+        } else {
+            navi2.style.transition = "all 0.6s";
+            navi2.style.backgroundColor = "white";
+            navi2.style.boxShadow = "none";
+            navi1.style.paddingTop = "10px";
+        }
+    });
+</script>
+<script>
+    document.getElementById('ham').addEventListener('click', function () {
+        let toggleDiv = document.getElementById('ham');
+        if (toggleDiv.style.boxShadow === '0px 0px 6px 1px #00000038' || toggleDiv.style.boxShadow === '') {
+            toggleDiv.style.boxShadow = '0px 0px 6px 1px #00000038';
+            toggleDiv.style.border = '1px solid #e1e1e1';
+        } else {
+            toggleDiv.style.boxShadow = '';
+            toggleDiv.style.border = 'transparent';
+        }
+    });
+</script>
+    </head>
+    <body>
+        <header>
+            <div class="topline"></div>
+            <nav class="navbar" id="navbar">
+                <div class="container navbarBox">
+                    <div class="navbar-left">
+                        <a href="index.html" class="navbar-brand"><img src="images/logo.png" alt="logo" class="logoHead"></a>
+                    </div>
+                    <div class="navbar-center">
+                        <img src="images/header.png" alt="logoText" class="logoText">
+                    </div>
+                    <div class="navbar-right">
+                        <button class="navbar-toggler bg-secondary" id="ham" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="nav-item">
+                                <a class="nav-link active linknav" id="nav-link" href="index.html">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active linknav" id="nav-link" href="#azienda">AZIENDA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active linknav" id="nav-link" href="#soluzioni">SOLUZIONI</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active linknav" id="nav-link" href="#contatti">CONTATTI</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active linknav" id="nav-link" href="#default">DEFAULT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active linknav" id="nav-link" href="#default">DEFAULT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active linknav" id="nav-link" href="#default">DEFAULT</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </body>
+    </html>

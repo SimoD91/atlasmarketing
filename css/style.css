@@ -1,0 +1,207 @@
+@font-face {
+    font-family: 'League Spartan';
+    src: URL('../fonts/LeagueSpartan-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+#HeaderContainer {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.topline {
+    background-color: #0077B6;
+    width: auto;
+    height: 5px;
+}
+
+#navbar {
+    background-color: white;
+    max-width: 100%;
+    padding-top: 10px;
+    transition: padding-top 0.6s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left {
+    flex: 1;
+    text-align: left;
+}
+
+.navbar-center {
+    flex: 2;
+    text-align: center;
+}
+
+.navbar-right {
+    flex: 1;
+    text-align: right;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.linknav {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    color: #3230313b;
+}
+
+.linknav:hover {
+    color: #0077B6 !important;
+}
+
+.navbar-brand {
+    width: 20%;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    justify-content: end;
+}
+
+#ham {
+    background-color: white !important;
+    border: transparent;
+}
+
+.navbar-toggler {
+    color: transparent !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("../images/navbar-toggler.png") !important;
+    transform: scale(1, 1);
+}
+
+.navbar-toggler:hover {
+    box-shadow: 0px 0px 6px 1px #00000038;
+    border: 1px solid #3230313b !important;
+}
+
+.logoHead {
+    width: 30%;
+}
+
+.logoText {
+    width: 50%;
+}
+
+.league-spartan-p {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 6rem;
+    line-height: 1.1;
+    text-align: center;
+    margin-top: 200px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 2000px;
+    color: #323031;
+  }
+
+  .blueTxt {
+    color: #0077B6;
+  }
+
+  @media screen and (min-width: 1800.5px) {
+    .linknav {
+        font-size: 1.3rem;
+    }
+  }
+
+  @media screen and (min-width: 1600.5px) {
+    .container {
+        max-width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-left {
+        text-align: left;
+    }
+
+    .navbar-center {
+        text-align: center;
+    }
+
+    .navbar-right {
+        text-align: right;
+    }
+
+    .navbar-toggler-icon {
+        width: 2.5em;
+        height: 2.5em;
+    }
+}
+
+@media screen and (max-width: 1199.5px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 650.5px) {
+    .logoHead {
+        width: 60%;
+    }
+
+    .logoText {
+        width: 70%;
+    }
+
+    .linknav {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 500.5px) {
+    .logoHead {
+        width: 70%;
+    }
+
+    .logoText {
+        width: 80%;
+    }
+
+    .navbar-toggler {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .linknav {
+        font-size: 0.6rem;
+    }
+}
+
+@media screen and (max-width: 390.5px) {
+    .logoHead {
+        width: 80%;
+    }
+
+    .logoText {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 350.5px) {
+    .logoHead {
+        width: 80%;
+    }
+
+    .logoText {
+        width: 100%;
+    }
+}
