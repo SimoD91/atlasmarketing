@@ -68,22 +68,41 @@
 }
 
 #ham {
-    background-color: white !important;
     border: transparent;
 }
 
 .navbar-toggler {
     color: transparent !important;
+    transition: all 0.3s;
+    background-color: white !important;
+}
+
+.navbar-toggler:hover {
+    box-shadow: 0px 0px 6px 1px #00000038;
+    border: 1px solid #e1e1e1 !important;
+    background-color: rgb(243, 243, 243) !important;
+}
+
+.navbar-toggler.active {
+    box-shadow: 0px 0px 6px 1px #00000038!important;
+    border: 1px solid #e1e1e1 !important;
+}
+
+.navbar-toggler.active:hover {
+    box-shadow: 0px 0px 6px 1px #00000038!important;
+    border: 1px solid #e1e1e1 !important;
+    background-color: rgb(243, 243, 243) !important;
+}
+
+.navbar-toggler.active:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
 }
 
 .navbar-toggler-icon {
     background-image: url("../images/navbar-toggler.png") !important;
     transform: scale(1, 1);
-}
-
-.navbar-toggler:hover {
-    box-shadow: 0px 0px 6px 1px #00000038;
-    border: 1px solid #3230313b !important;
 }
 
 .logoHead {
@@ -107,15 +126,19 @@
     margin-right: 200px;
     margin-bottom: 2000px;
     color: #323031;
-  }
+}
 
-  .blueTxt {
+.blueTxt {
     color: #0077B6;
-  }
+}
 
   @media screen and (min-width: 1800.5px) {
     .linknav {
         font-size: 1.3rem;
+    }
+
+    .league-spartan-p {
+        margin-top: 300px;
     }
   }
 
@@ -145,9 +168,29 @@
     }
 }
 
+@media screen and (max-width: 1400.5px) {
+    .league-spartan-p {
+        font-size: 5rem;
+    }
+}
+
 @media screen and (max-width: 1199.5px) {
     .container {
         max-width: 100%;
+    }
+
+    .league-spartan-p {
+        margin-top: 180px;
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 1015.5px) {
+    .league-spartan-p {
+        margin-top: 160px;
+        font-size: 3rem;
+        margin-left: 50px;
+        margin-right: 50px;
     }
 }
 
@@ -171,7 +214,7 @@
     }
 
     .logoText {
-        width: 80%;
+        width: 90%;
     }
 
     .navbar-toggler {
@@ -183,6 +226,11 @@
 
     .linknav {
         font-size: 0.6rem;
+    }
+
+    .league-spartan-p {
+        margin-top: 130px;
+        font-size: 1.5rem;
     }
 }
 
@@ -203,5 +251,10 @@
 
     .logoText {
         width: 100%;
+    }
+
+    .league-spartan-p {
+        margin-top: 130px;
+        font-size: 1.4rem;
     }
 }

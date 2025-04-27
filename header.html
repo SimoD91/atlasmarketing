@@ -25,15 +25,14 @@
     });
 </script>
 <script>
-    document.getElementById('ham').addEventListener('click', function () {
-        let toggleDiv = document.getElementById('ham');
-        if (toggleDiv.style.boxShadow === '0px 0px 6px 1px #00000038' || toggleDiv.style.boxShadow === '') {
-            toggleDiv.style.boxShadow = '0px 0px 6px 1px #00000038';
-            toggleDiv.style.border = '1px solid #e1e1e1';
+    const ham = document.getElementById('ham');
+    ham.addEventListener('click', function () {
+        if (ham.classList.contains('active')) {
+            ham.classList.remove('active');
         } else {
-            toggleDiv.style.boxShadow = '';
-            toggleDiv.style.border = 'transparent';
+            ham.classList.add('active');
         }
+        ham.blur();
     });
 </script>
     </head>
