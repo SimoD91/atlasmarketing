@@ -80,18 +80,18 @@
 .navbar-toggler:hover {
     box-shadow: 0px 0px 6px 1px #00000038;
     border: 1px solid #e1e1e1 !important;
-    background-color: rgb(243, 243, 243) !important;
+    background-color: rgb(248, 248, 248) !important;
 }
 
 .navbar-toggler.active {
-    box-shadow: 0px 0px 6px 1px #00000038!important;
+    box-shadow: 0px 0px 6px 1px #00000038 !important;
     border: 1px solid #e1e1e1 !important;
 }
 
 .navbar-toggler.active:hover {
-    box-shadow: 0px 0px 6px 1px #00000038!important;
+    box-shadow: 0px 0px 6px 1px #00000038 !important;
     border: 1px solid #e1e1e1 !important;
-    background-color: rgb(243, 243, 243) !important;
+    background-color: rgb(248, 248, 248) !important;
 }
 
 .navbar-toggler.active:focus {
@@ -124,12 +124,50 @@
     margin-top: 200px;
     margin-left: 200px;
     margin-right: 200px;
-    margin-bottom: 2000px;
     color: #323031;
 }
 
 .blueTxt {
     color: #0077B6;
+}
+
+.underHero {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.arrow {
+    color: #323031;
+    width: 80px;
+    height: 80px;
+}
+
+.arrow:hover {
+    color: #0077B6;
+    cursor: pointer;
+}
+
+h2 {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 0;
+}
+
+.contServizi p {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.1rem;
+    text-align: center;
+    margin-right: 380px;
+    margin-left: 380px;
+    line-height: 1.2;
 }
 
   @media screen and (min-width: 1800.5px) {
@@ -139,6 +177,11 @@
 
     .league-spartan-p {
         margin-top: 300px;
+    }
+
+    .contServizi p {
+        margin-left: 600px;
+        margin-right: 600px;
     }
   }
 
@@ -172,6 +215,11 @@
     .league-spartan-p {
         font-size: 5rem;
     }
+
+    .contServizi p {
+        margin-left: 340px;
+        margin-right: 340px;
+    }
 }
 
 @media screen and (max-width: 1199.5px) {
@@ -183,6 +231,16 @@
         margin-top: 180px;
         font-size: 4rem;
     }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .contServizi p {
+        margin-left: 240px;
+        margin-right: 240px;
+        font-size: 1.8rem;
+    }
 }
 
 @media screen and (max-width: 1015.5px) {
@@ -191,6 +249,11 @@
         font-size: 3rem;
         margin-left: 50px;
         margin-right: 50px;
+    }
+
+    .contServizi p {
+        margin-left: 150px;
+        margin-right: 150px;
     }
 }
 
@@ -205,6 +268,11 @@
 
     .linknav {
         font-size: 0.8rem;
+    }
+
+    .contServizi p {
+        margin-left: 80px;
+        margin-right: 80px;
     }
 }
 
@@ -232,6 +300,24 @@
         margin-top: 130px;
         font-size: 1.5rem;
     }
+
+    .underHero {
+        margin-top: 60px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        margin-top: 60px;
+    }
+
+    .contServizi p {
+        font-size: 1.2rem;
+    }
+
+    .arrow {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 @media screen and (max-width: 390.5px) {
@@ -241,6 +327,12 @@
 
     .logoText {
         width: 90%;
+    }
+
+    .contServizi p {
+        font-size: 1.2rem;
+        margin-left: 30px;
+        margin-right: 30px;
     }
 }
 
