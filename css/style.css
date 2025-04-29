@@ -67,37 +67,10 @@
     justify-content: end;
 }
 
-#ham {
-    border: transparent;
-}
-
 .navbar-toggler {
     color: transparent !important;
-    transition: all 0.3s;
     background-color: white !important;
-}
-
-.navbar-toggler:hover {
-    box-shadow: 0px 0px 6px 1px #00000038;
-    border: 1px solid #e1e1e1 !important;
-    background-color: rgb(248, 248, 248) !important;
-}
-
-.navbar-toggler.active {
-    box-shadow: 0px 0px 6px 1px #00000038 !important;
-    border: 1px solid #e1e1e1 !important;
-}
-
-.navbar-toggler.active:hover {
-    box-shadow: 0px 0px 6px 1px #00000038 !important;
-    border: 1px solid #e1e1e1 !important;
-    background-color: rgb(248, 248, 248) !important;
-}
-
-.navbar-toggler.active:focus {
-    outline: none;
-    box-shadow: none;
-    border: none;
+    border: transparent;
 }
 
 .navbar-toggler-icon {
