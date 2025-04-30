@@ -87,16 +87,95 @@
         <div class="contHero">
     <p class="league-spartan-p"><span class="blueTxt">Orientiamo</span> il tuo brand nell'oceano digitale.</p>
     </div>
+    <div id="scrollTarget"></div>
     <div class="underHero">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-compact-down arrow" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67"/>
-          </svg>
-    </div>
+        <svg onclick="smoothScrollToSelf()"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        class="bi bi-chevron-compact-down arrow"
+        viewBox="0 0 16 16">
+     <path fill-rule="evenodd"
+           d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67"/>
+   </svg>   
+      </div>
     <div class="contServizi">
         <h2>Con Atlas Marketing</h2>
         <p>trasformiamo la potenza dell'AI e del marketing multicanale in risultati tangibili, affiancando aziende e privati nel percorso di crescita e guadagno online.</p>
     </div>
+    <div class="container contCard">
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-2">
+            <div class="card h-100 text-center">
+              <div class="card-body d-flex flex-column justify-content-between">
+                <img src="./images/logo.png" class="card-img-top" alt="Image description">
+                <h5 class="card-title">Strategia</h5>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-12 col-md-6 col-lg-2">
+            <div class="card h-100 text-center">
+              <div class="card-body d-flex flex-column justify-content-between">
+                <img src="./images/logo.png" class="card-img-top" alt="Image description">
+                <h5 class="card-title">IA</h5>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-12 col-md-6 col-lg-2">
+            <div class="card h-100 text-center">
+              <div class="card-body d-flex flex-column justify-content-between">
+                <img src="./images/logo.png" class="card-img-top" alt="Image description">
+                <h5 class="card-title">Identità Brand</h5>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-12 col-md-6 col-lg-2">
+            <div class="card h-100 text-center">
+              <div class="card-body d-flex flex-column justify-content-between">
+                <img src="./images/logo.png" class="card-img-top" alt="Image description">
+                <h5 class="card-title">Advertising & Social Media</h5>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-12 col-md-6 col-lg-2">
+            <div class="card h-100 text-center">
+              <div class="card-body d-flex flex-column justify-content-between">
+                <img src="./images/logo.png" class="card-img-top" alt="Image description">
+                <h5 class="card-title">Risultati</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
     <div id="FooterContainer"></div>
+    <script>
+        function smoothScrollToSelf() {
+          const element = document.getElementById('scrollTarget');
+          const targetY = element.getBoundingClientRect().top + window.pageYOffset;
+          const duration = 550;
+          const startY = window.pageYOffset;
+          const startTime = performance.now();
+      
+          function animate(time) {
+            const elapsed = time - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = easeInOutQuad(progress);
+            window.scrollTo(0, startY + (targetY - startY) * ease);
+      
+            if (progress < 1) requestAnimationFrame(animate);
+          }
+      
+          function easeInOutQuad(t) {
+            return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+          }
+      
+          requestAnimationFrame(animate);
+        }
+      </script>      
 </body>
 </html>

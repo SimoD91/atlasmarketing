@@ -132,6 +132,10 @@ h2 {
 }
 
 .contServizi p {
+    margin-bottom: 45px;
+}
+
+.contServizi p {
     font-family: "League Spartan", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -141,7 +145,51 @@ h2 {
     margin-right: 380px;
     margin-left: 380px;
     line-height: 1.2;
-    margin-bottom: 700px;
+}
+
+.card {
+    border-radius: 20px;
+    background: #1c1c1c;
+    background: linear-gradient(23deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 70%, rgba(0, 119, 182, 1) 100%);
+    box-shadow: -1px 2px 3px black;
+    box-sizing: border-box;
+    outline: 3px solid transparent;
+    border: transparent;
+}
+
+.card:hover {
+    outline: 3px solid #0077B6;
+}
+
+.card:hover .card-title {
+    transform: translateY(-15px);
+}
+
+.card-body {
+    height: 350px;
+    width: 200px;
+}
+
+.card-img-top {
+    padding-top: 50px;
+}
+
+.card-title {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 2rem;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.contCard {
+    margin-bottom: 200px;
+}
+
+.contCard>.row {
+    justify-content: center;
 }
 
   @media screen and (min-width: 1800.5px) {
