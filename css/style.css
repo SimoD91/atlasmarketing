@@ -159,6 +159,7 @@ h2 {
 
 .card:hover {
     outline: 3px solid #0077B6;
+    cursor: pointer;
 }
 
 .card:hover .card-title {
