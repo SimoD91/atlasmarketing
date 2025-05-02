@@ -155,6 +155,7 @@ h2 {
     box-sizing: border-box;
     outline: 3px solid transparent;
     border: transparent;
+    align-items: center;
 }
 
 .card:hover {
