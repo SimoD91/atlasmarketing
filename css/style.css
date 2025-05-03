@@ -194,6 +194,10 @@ h2 {
     justify-content: center;
 }
 
+#scrollTarget {
+    scroll-margin-top: 70px;
+}
+
   @media screen and (min-width: 1800.5px) {
     .linknav {
         font-size: 1.3rem;
