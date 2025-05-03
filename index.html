@@ -88,8 +88,8 @@
     <p class="league-spartan-p"><span class="blueTxt">Orientiamo</span> il tuo brand nell'oceano digitale.</p>
     </div>
     <div class="underHero">
-      <div id="scrollTarget"></div>
-      <a href="#scrollTarget">
+      <div id="atlasMarketing"></div>
+      <a href="#atlasMarketing">
         <svg onclick="smoothScrollToSelf()"
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
@@ -156,7 +156,7 @@
     <div id="FooterContainer"></div>
     <script>
       function smoothScrollToSelf() {
-        const element = document.getElementById('scrollTarget');
+        const element = document.getElementById('atlasMarketing');
         if (window.innerWidth <= 426) {
           element.scrollIntoView({ behavior: 'auto' });
           return;
@@ -180,7 +180,7 @@
         function easeInOutQuad(t) {
           return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
         }
-    
+
         requestAnimationFrame(animate);
       }
     </script>

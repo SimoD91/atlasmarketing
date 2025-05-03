@@ -4,6 +4,10 @@
     font-weight: 400;
 }
 
+html, body {
+    scroll-behavior: smooth;
+  }
+
 #HeaderContainer {
     position: fixed;
     top: 0;
@@ -194,13 +198,9 @@ h2 {
     justify-content: center;
 }
 
-#scrollTarget {
+#atlasMarketing {
     scroll-margin-top: 70px;
 }
-
-html, body {
-    scroll-behavior: smooth;
-  }
 
   @media screen and (min-width: 1800.5px) {
     .linknav {
