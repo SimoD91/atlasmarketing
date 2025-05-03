@@ -152,34 +152,37 @@
           </div>
         </div>
       </div>
-      
     </div>
     <div id="FooterContainer"></div>
-    <!--
     <script>
-        function smoothScrollToSelf() {
-          const element = document.getElementById('scrollTarget');
-          const targetY = element.getBoundingClientRect().top + window.pageYOffset;
-          const duration = 550;
-          const startY = window.pageYOffset;
-          const startTime = performance.now();
-      
-          function animate(time) {
-            const elapsed = time - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const ease = easeInOutQuad(progress);
-            window.scrollTo(0, startY + (targetY - startY) * ease);
-      
-            if (progress < 1) requestAnimationFrame(animate);
-          }
-      
-          function easeInOutQuad(t) {
-            return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-          }
-      
-          requestAnimationFrame(animate);
+      function smoothScrollToSelf() {
+        const element = document.getElementById('scrollTarget');
+        if (window.innerWidth <= 426) {
+          element.scrollIntoView({ behavior: 'auto' });
+          return;
         }
-      </script>
-      -->
+    
+        const offset = 100;
+        const targetY = element.getBoundingClientRect().top + window.pageYOffset - offset;
+        const duration = 550;
+        const startY = window.pageYOffset;
+        const startTime = performance.now();
+    
+        function animate(time) {
+          const elapsed = time - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const ease = easeInOutQuad(progress);
+          window.scrollTo(0, startY + (targetY - startY) * ease);
+    
+          if (progress < 1) requestAnimationFrame(animate);
+        }
+    
+        function easeInOutQuad(t) {
+          return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        }
+    
+        requestAnimationFrame(animate);
+      }
+    </script>
 </body>
 </html>

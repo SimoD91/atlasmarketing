@@ -198,6 +198,10 @@ h2 {
     scroll-margin-top: 70px;
 }
 
+html, body {
+    scroll-behavior: smooth;
+  }
+
   @media screen and (min-width: 1800.5px) {
     .linknav {
         font-size: 1.3rem;
