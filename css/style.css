@@ -171,11 +171,6 @@ h2 {
     transform: translateY(-15px);
 }
 
-.card-body {
-    height: 350px;
-    width: 200px;
-}
-
 .card-img-top {
     padding-top: 50px;
 }
@@ -201,6 +196,22 @@ h2 {
 #atlasMarketing {
     scroll-margin-top: 70px;
 }
+
+.scroll-cards-wrapper {
+    display: none;
+  }
+  
+.scroll-cards {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+.scroll-cards .card {
+    min-width: 75%;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
 
   @media screen and (min-width: 1800.5px) {
     .linknav {
@@ -350,6 +361,44 @@ h2 {
         width: 40px;
         height: 40px;
     }
+}
+
+@media (min-width: 575.5px) {
+    .scroll-cards-wrapper {
+        display: none;
+      }
+  }
+
+@media (max-width: 575.5px) {
+    .scroll-cards-wrapper {
+      display: flex;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      padding: 0 0.6rem;
+    }
+  
+    .scroll-cards {
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+    }
+  
+    .scroll-cards .card {
+        flex: 0 0 calc(100vw - 2rem);
+        scroll-snap-align: start;
+        flex-shrink: 0;
+        min-width: auto;
+      }
+
+      .card-body {
+        flex: 0 0 auto;
+      }
+
+      .card-img, .card-img-bottom, .card-img-top {
+        max-width: auto;
+        height: auto;
+        display: block;
+      }
 }
 
 @media screen and (max-width: 390.5px) {
