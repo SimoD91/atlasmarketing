@@ -105,7 +105,7 @@
         <p>trasformiamo la potenza dell'AI e del marketing multicanale in risultati tangibili, affiancando aziende e privati nel percorso di crescita e guadagno online.</p>
     </div>
     <div class="container contCard px-2">
-      <div class="scroll-cards-wrapper">
+      <div class="scroll-cards-wrapper d-flex d-md-none">
         <div class="scroll-cards">
           <div class="card">
             <div class="card-body">
@@ -121,29 +121,36 @@
           </div>
           <div class="card">
             <div class="card-body">
-              <img src="./images/logo.png" class="card-img-top" alt="Brand">
+              <img src="./images/brand.png" class="card-img-top" alt="Brand">
               <h5 class="card-title">Brand Identity</h5>
             </div>
           </div>
           <div class="card">
             <div class="card-body">
-              <img src="./images/logo.png" class="card-img-top" alt="Adv">
+              <img src="./images/advertising.png" class="card-img-top" alt="Adv">
               <h5 class="card-title">Advertising & Social Media</h5>
             </div>
           </div>
           <div class="card">
             <div class="card-body">
-              <img src="./images/logo.png" class="card-img-top" alt="Risultati">
+              <img src="./images/risultati.png" class="card-img-top" alt="Risultati">
               <h5 class="card-title">Risultati</h5>
             </div>
           </div>
         </div>
       </div>
-     <div class="row g-4 d-none d-sm-flex d-md-flex">
+      <div class="carousel-dots d-flex justify-content-center mt-3 d-md-none">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <div class="row g-4 d-none d-md-flex">
     <div class="col-12 col-md-6 col-lg-2">
                 <div class="card h-100 text-center">
                   <div class="card-body d-flex flex-column justify-content-between">
-                    <img src="./images/strategia.png" class="card-img-top" alt="Image description">
+                    <img src="./images/strategia.png" class="card-img-top" alt="Strategia">
                     <h5 class="card-title">Strategia</h5>
                   </div>
                 </div>
@@ -152,7 +159,7 @@
               <div class="col-12 col-md-6 col-lg-2">
                 <div class="card h-100 text-center">
                   <div class="card-body d-flex flex-column justify-content-between">
-                    <img src="./images/ai.png" class="card-img-top" alt="Image description">
+                    <img src="./images/ai.png" class="card-img-top" alt="AI">
                     <h5 class="card-title">AI</h5>
                   </div>
                 </div>
@@ -161,7 +168,7 @@
               <div class="col-12 col-md-6 col-lg-2">
                 <div class="card h-100 text-center">
                   <div class="card-body d-flex flex-column justify-content-between">
-                    <img src="./images/logo.png" class="card-img-top" alt="Image description">
+                    <img src="./images/brand.png" class="card-img-top" alt="Brand">
                     <h5 class="card-title">Brand Identity</h5>
                   </div>
                 </div>
@@ -170,7 +177,7 @@
               <div class="col-12 col-md-6 col-lg-2">
                 <div class="card h-100 text-center">
                   <div class="card-body d-flex flex-column justify-content-between">
-                    <img src="./images/logo.png" class="card-img-top" alt="Image description">
+                    <img src="./images/advertising.png" class="card-img-top" alt="Adv">
                     <h5 class="card-title">Advertising & Social Media</h5>
                   </div>
                 </div>
@@ -179,7 +186,7 @@
               <div class="col-12 col-md-6 col-lg-2">
                 <div class="card h-100 text-center">
                   <div class="card-body d-flex flex-column justify-content-between">
-                    <img src="./images/logo.png" class="card-img-top" alt="Image description">
+                    <img src="./images/risultati.png" class="card-img-top" alt="Risultati">
                     <h5 class="card-title">Risultati</h5>
                   </div>
                 </div>
@@ -218,5 +225,58 @@
         requestAnimationFrame(animate);
       }
     </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll('.scroll-cards .card');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const index = Array.from(cards).indexOf(entry.target);
+            dots.forEach(dot => dot.classList.remove('active'));
+            if (dots[index]) {
+              dots[index].classList.add('active');
+            }
+          }
+        });
+      },
+      {
+        root: document.querySelector('.scroll-cards'),
+        threshold: 0.6
+      }
+    );
+
+    cards.forEach(card => observer.observe(card));
+  });
+</script>
+<script>
+  const cardsWrapper = document.querySelector('.scroll-cards-wrapper');
+  const cards = document.querySelectorAll('.scroll-cards .card');
+  const dots = document.querySelectorAll('.carousel-dots .dot');
+
+  function updateDots() {
+    const scrollLeft = cardsWrapper.scrollLeft;
+    const cardWidth = cardsWrapper.clientWidth;
+
+    const currentIndex = Math.round(scrollLeft / cardWidth);
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+  }
+
+  cardsWrapper.addEventListener('scroll', () => {
+    window.requestAnimationFrame(updateDots);
+  });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      const scrollAmount = cardsWrapper.clientWidth * index;
+      cardsWrapper.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    });
+  });
+</script>
 </body>
 </html>

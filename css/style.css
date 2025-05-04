@@ -300,6 +300,59 @@ h2 {
     }
 }
 
+@media screen and (max-width: 767.5px) {
+.scroll-cards-wrapper {
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 0 0.6rem;
+    overflow-y: hidden;
+  }
+
+  .scroll-cards {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .scroll-cards .card {
+      flex: 0 0 calc(100vw - 1rem);
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      min-width: auto;
+      outline: none;
+      margin-bottom: 10px;
+    }
+
+    .card-body {
+      flex: 0 0 auto;
+    }
+
+    .card-img, .card-img-bottom, .card-img-top {
+      max-width: auto;
+      height: auto;
+      display: block;
+    }
+
+    .carousel-dots {
+        gap: 0.8rem;
+      }
+      
+      .carousel-dots .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #0076b6;
+        border: 2px solid #0076b6;
+        transition: background-color 0.3s ease;
+      }
+      
+      .carousel-dots .dot.active {
+        background-color: transparent;
+        border: 2px solid #0076b6cc;
+      }
+}
+
 @media screen and (max-width: 650.5px) {
     .logoHead {
         width: 60%;
@@ -368,38 +421,6 @@ h2 {
         display: none;
       }
   }
-
-@media (max-width: 575.5px) {
-    .scroll-cards-wrapper {
-      display: flex;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x mandatory;
-      padding: 0 0.6rem;
-    }
-  
-    .scroll-cards {
-      display: flex;
-      gap: 1rem;
-      padding: 0;
-    }
-  
-    .scroll-cards .card {
-        flex: 0 0 calc(100vw - 2rem);
-        scroll-snap-align: start;
-        flex-shrink: 0;
-        min-width: auto;
-      }
-
-      .card-body {
-        flex: 0 0 auto;
-      }
-
-      .card-img, .card-img-bottom, .card-img-top {
-        max-width: auto;
-        height: auto;
-        display: block;
-      }
-}
 
 @media screen and (max-width: 390.5px) {
     .logoHead {
