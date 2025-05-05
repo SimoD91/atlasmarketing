@@ -293,5 +293,28 @@
   window.addEventListener('load', updateDots);
   window.addEventListener('resize', updateDots);
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const wrapper = document.querySelector('.scroll-cards-wrapper');
+  const cards = document.querySelectorAll('.scroll-cards .card');
+  let isScrolling;
+
+  wrapper.addEventListener('scroll', () => {
+    window.clearTimeout(isScrolling);
+
+    isScrolling = setTimeout(() => {
+      const scrollLeft = wrapper.scrollLeft;
+      const cardWidth = wrapper.offsetWidth;
+      const nearestIndex = Math.round(scrollLeft / cardWidth);
+
+      wrapper.scrollTo({
+        left: nearestIndex * cardWidth,
+        behavior: 'smooth'
+      });
+    }, 100);
+  });
+});
+
+</script>
 </body>
 </html>
