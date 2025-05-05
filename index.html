@@ -257,13 +257,25 @@
   const dots = document.querySelectorAll('.carousel-dots .dot');
 
   function updateDots() {
-    const scrollLeft = cardsWrapper.scrollLeft;
-    const cardWidth = cardsWrapper.clientWidth;
+    const wrapperRect = cardsWrapper.getBoundingClientRect();
 
-    const currentIndex = Math.round(scrollLeft / cardWidth);
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+
+    cards.forEach((card, index) => {
+      const cardRect = card.getBoundingClientRect();
+      const cardCenter = cardRect.left + cardRect.width / 2;
+      const wrapperCenter = wrapperRect.left + wrapperRect.width / 2;
+      const distance = Math.abs(cardCenter - wrapperCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
 
     dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === currentIndex);
+      dot.classList.toggle('active', index === closestIndex);
     });
   }
 
@@ -273,10 +285,13 @@
 
   dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
-      const scrollAmount = cardsWrapper.clientWidth * index;
+      const scrollAmount = cards[index].offsetLeft;
       cardsWrapper.scrollTo({ left: scrollAmount, behavior: 'smooth' });
     });
   });
+
+  window.addEventListener('load', updateDots);
+  window.addEventListener('resize', updateDots);
 </script>
 </body>
 </html>
