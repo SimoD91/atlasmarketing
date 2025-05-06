@@ -225,93 +225,95 @@
         requestAnimationFrame(animate);
       }
     </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const wrapper = document.querySelector('.scroll-cards-wrapper');
-        const cards = document.querySelectorAll('.scroll-cards .card');
-        const dots = document.querySelectorAll('.carousel-dots .dot');
-    
-        let isSnapping = false;
-        let lastSnapTime = 0;
-    
-        function updateDots() {
-          const wrapperRect = wrapper.getBoundingClientRect();
-          let closestIndex = 0;
-          let closestDistance = Infinity;
-    
-          cards.forEach((card, index) => {
-            const cardRect = card.getBoundingClientRect();
-            const cardCenter = cardRect.left + cardRect.width / 2;
-            const wrapperCenter = wrapperRect.left + wrapperRect.width / 2;
-            const distance = Math.abs(cardCenter - wrapperCenter);
-    
-            if (distance < closestDistance) {
-              closestDistance = distance;
-              closestIndex = index;
-            }
-          });
-    
-          dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === closestIndex);
-          });
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const wrapper = document.querySelector('.scroll-cards-wrapper');
+    const cards = document.querySelectorAll('.scroll-cards .card');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+
+    let isSnapping = false;
+    let scrollTimeout;
+
+    function updateDots() {
+      const wrapperRect = wrapper.getBoundingClientRect();
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      cards.forEach((card, index) => {
+        const cardRect = card.getBoundingClientRect();
+        const cardCenter = cardRect.left + cardRect.width / 2;
+        const wrapperCenter = wrapperRect.left + wrapperRect.width / 2;
+        const distance = Math.abs(cardCenter - wrapperCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
         }
-    
-        function snapToNearestCard() {
-          if (isSnapping) return;
-    
-          const now = Date.now();
-          if (now - lastSnapTime < 300) return;
-    
-          isSnapping = true;
-    
-          const cardStyle = getComputedStyle(cards[0]);
-          const gap = parseInt(cardStyle.marginRight || 0) || parseInt(getComputedStyle(wrapper).gap) || 0;
-          const cardWidth = cards[0].offsetWidth + gap;
-          const scrollLeft = wrapper.scrollLeft;
-    
-          const nearestIndex = Math.round(scrollLeft / cardWidth);
-          const snapPosition = nearestIndex * cardWidth;
-    
-          wrapper.style.scrollSnapType = 'none';
-          wrapper.style.scrollBehavior = 'auto';
-          wrapper.scrollLeft = snapPosition;
-    
-          setTimeout(() => {
-            wrapper.style.scrollSnapType = 'x mandatory';
-            isSnapping = false;
-            lastSnapTime = Date.now();
-            updateDots();
-          }, 100);
-        }
-    
-        window.addEventListener('load', () => {
-          wrapper.scrollTo({ left: 0, behavior: 'auto' });
-          updateDots();
-        });
-    
-        wrapper.addEventListener('scroll', () => {
-          window.requestAnimationFrame(() => {
-            updateDots();
-            snapToNearestCard();
-          });
-        });
-    
-        dots.forEach((dot, index) => {
-          dot.addEventListener('click', () => {
-            const scrollAmount = cards[index].offsetLeft;
-            wrapper.style.scrollSnapType = 'none';
-            wrapper.style.scrollBehavior = 'auto';
-            wrapper.scrollLeft = scrollAmount;
-    
-            setTimeout(() => {
-              wrapper.style.scrollSnapType = 'x mandatory';
-              updateDots();
-            }, 100);
-          });
-        });
-  
-        window.addEventListener('resize', updateDots);
       });
-    </script>    
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === closestIndex);
+      });
+    }
+
+    function getCardWidth() {
+      const style = getComputedStyle(cards[0]);
+      const marginRight = parseInt(style.marginRight) || 0;
+      return cards[0].offsetWidth + marginRight;
+    }
+
+    function snapToNearestCard() {
+      if (isSnapping) return;
+      isSnapping = true;
+
+      const cardWidth = getCardWidth();
+      const scrollLeft = wrapper.scrollLeft;
+      const nearestIndex = Math.round(scrollLeft / cardWidth);
+      const targetScrollLeft = nearestIndex * cardWidth;
+
+      if (Math.abs(scrollLeft - targetScrollLeft) < 1) {
+        isSnapping = false;
+        return;
+      }
+
+      wrapper.scrollTo({ left: targetScrollLeft, behavior: 'smooth' });
+
+      setTimeout(() => {
+        isSnapping = false;
+        updateDots();
+      }, 300);
+    }
+
+    wrapper.addEventListener('scroll', () => {
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      requestAnimationFrame(updateDots);
+
+      scrollTimeout = setTimeout(() => {
+        snapToNearestCard();
+      }, 150);
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        const scrollAmount = cards[index].offsetLeft;
+        isSnapping = true;
+
+        wrapper.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+
+        setTimeout(() => {
+          isSnapping = false;
+          updateDots();
+        }, 300);
+      });
+    });
+
+    window.addEventListener('load', () => {
+      wrapper.scrollTo({ left: 0, behavior: 'auto' });
+      updateDots();
+    });
+
+    window.addEventListener('resize', updateDots);
+  });
+</script>
 </body>
 </html>
