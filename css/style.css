@@ -355,6 +355,10 @@ h2 {
         background-color: transparent;
         border: 2px solid #0076b6cc;
       }
+
+      .scroll-cards-wrapper::-webkit-scrollbar {
+        display: none;
+      }
 }
 
 @media screen and (max-width: 650.5px) {
