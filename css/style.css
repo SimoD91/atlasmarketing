@@ -321,6 +321,7 @@ h2 {
   .scroll-cards .card {
       flex: 0 0 calc(100vw - 1rem);
       scroll-snap-align: start;
+      scroll-snap-stop: always;
       flex-shrink: 0;
       min-width: auto;
       outline: none;
