@@ -234,6 +234,8 @@
     let isSnapping = false;
     let scrollTimeout;
 
+    const initialPadding = parseFloat(getComputedStyle(wrapper).paddingLeft) || 0;
+
     function updateDots() {
       const wrapperRect = wrapper.getBoundingClientRect();
       let closestIndex = 0;
@@ -268,8 +270,8 @@
 
       const cardWidth = getCardWidth();
       const scrollLeft = wrapper.scrollLeft;
-      const nearestIndex = Math.round(scrollLeft / cardWidth);
-      const targetScrollLeft = nearestIndex * cardWidth;
+      const nearestIndex = Math.round((scrollLeft - initialPadding) / cardWidth);
+      const targetScrollLeft = nearestIndex * cardWidth + initialPadding;
 
       if (Math.abs(scrollLeft - targetScrollLeft) < 1) {
         isSnapping = false;
@@ -295,7 +297,8 @@
 
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
-        const scrollAmount = cards[index].offsetLeft;
+        const cardWidth = getCardWidth();
+        const scrollAmount = index * cardWidth + initialPadding;
         isSnapping = true;
 
         wrapper.scrollTo({ left: scrollAmount, behavior: 'smooth' });
@@ -308,7 +311,7 @@
     });
 
     window.addEventListener('load', () => {
-      wrapper.scrollTo({ left: 0, behavior: 'auto' });
+      wrapper.scrollTo({ left: initialPadding, behavior: 'auto' });
       updateDots();
     });
 
