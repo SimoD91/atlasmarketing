@@ -232,6 +232,7 @@ h2 {
     padding: 100px 20px;
     color: #323031;
     padding-top: 0;
+    z-index: 1;
   }
   
   .line1, .line2 {
