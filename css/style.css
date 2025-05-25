@@ -4,6 +4,18 @@
     font-weight: 400;
 }
 
+@keyframes ripple {
+    0% {
+      transform: translateY(100%) scaleY(-1) scaleX(1);
+    }
+    50% {
+      transform: translateY(100%) scaleY(-1) scaleX(1.02);
+    }
+    100% {
+      transform: translateY(100%) scaleY(-1) scaleX(1);
+    }
+  }
+
 html, body {
     scroll-behavior: smooth;
   }
@@ -186,7 +198,7 @@ h2 {
 }
 
 .contCard {
-    margin-bottom: 200px;
+    margin-bottom: 150px;
 }
 
 .contCard>.row {
@@ -211,6 +223,44 @@ h2 {
     min-width: 75%;
     scroll-snap-align: start;
     flex-shrink: 0;
+  }
+  
+  .text-container {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    padding: 100px 20px;
+    color: #323031;
+    padding-top: 0;
+  }
+  
+  .line1, .line2 {
+    font-size: 80px;
+    line-height: 1.2;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .line2 {
+    display: inline-block;
+    position: relative;
+    color: #323031;
+  }
+
+  .reflection {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    transform: translateY(100%) scaleY(-1);
+    opacity: 0.5;
+    color: #323031;
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(1px) contrast(1.2);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+    animation: ripple 3s infinite ease-in-out;
   }
 
   @media screen and (min-width: 1800.5px) {
@@ -383,6 +433,18 @@ h2 {
         margin-left: 80px;
         margin-right: 80px;
     }
+
+    .contCard {
+        margin-bottom: 100px;
+        }
+
+    .line1, .line2 {
+        font-size: 3rem;
+    }
+
+    .reflection {
+        top: -30px;
+    }
 }
 
 @media (min-width: 575.5px) {
@@ -437,6 +499,14 @@ h2 {
     .card-title {
         font-size: 1.5rem;
         transform: translateY(-5px);
+    }
+
+    .line1, .line2 {
+        font-size: 2.5rem;
+    }
+
+    .reflection {
+        top: -22px;
     }
 }
 
