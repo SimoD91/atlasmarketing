@@ -264,6 +264,62 @@ h2 {
     animation: ripple 3s infinite ease-in-out;
   }
 
+  .divBanner {
+    margin-bottom: 20px;
+    margin-left: 140px;
+    margin-right: 93px;
+    padding: 0 12px;
+    background: linear-gradient(to right, #f6f6f6, transparent);
+  }
+  
+  .banner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .banner-title {
+    padding-top: 8px;
+    font-size: 36px;
+    color: #323031;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .banner-logo {
+    height: 200px;
+    object-fit: contain;
+  }
+
+  .banner-logo-container {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+  }
+  
+  .banner-description {
+    margin-top: 12px;
+    font-size: 21px;
+    line-height: 1.5;
+    color: #323031;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  
+  .banner-text {
+    flex: 1;
+  }
+
   @media screen and (min-width: 1800.5px) {
     .linknav {
         font-size: 1.3rem;
@@ -334,6 +390,11 @@ h2 {
         margin-left: 240px;
         margin-right: 240px;
         font-size: 1.8rem;
+    }
+
+    .divBanner {
+        margin-left: 40px;
+        margin-right: 40px;
     }
 }
 
@@ -509,6 +570,34 @@ h2 {
     .reflection {
         top: -25px;
         opacity: 0.3;
+    }
+
+    .divBanner {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .banner-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner-logo {
+        order: 0;
+    }
+
+    .banner-text {
+        order: 1;
+    }
+
+    .banner-description {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+
+    .banner-title {
+        font-size: 30px;
+        text-align: center;
     }
 }
 
