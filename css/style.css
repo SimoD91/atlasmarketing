@@ -508,6 +508,7 @@ h2 {
 
     .reflection {
         top: -25px;
+        opacity: 0.3;
     }
 }
 
