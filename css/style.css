@@ -320,6 +320,49 @@ h2 {
     flex: 1;
   }
 
+  #strategia {
+    scroll-margin-top: 120px;
+  }
+
+  #ai {
+    scroll-margin-top: 102px;
+  }
+
+  #brand {
+    scroll-margin-top: 95px;
+  }
+
+  #ads {
+    scroll-margin-top: 95px;
+  }
+
+  #risultati {
+    scroll-margin-top: 100px;
+    margin-bottom: 900px;
+  }
+
+  @media screen and (min-width: 2060.5px) {
+    #strategia {
+        scroll-margin-top: 150px;
+      }
+
+      #ai {
+        scroll-margin-top: 140px;
+      }
+
+      #brand {
+        scroll-margin-top: 130px;
+      }
+    
+      #ads {
+        scroll-margin-top: 140px;
+      }
+    
+      #risultati {
+        scroll-margin-top: 140px;
+  }
+}
+
   @media screen and (min-width: 1800.5px) {
     .linknav {
         font-size: 1.3rem;
@@ -452,25 +495,45 @@ h2 {
 
     .carousel-dots {
         gap: 0.8rem;
-      }
+    }
       
-      .carousel-dots .dot {
+    .carousel-dots .dot {
         width: 12px;
         height: 12px;
         border-radius: 50%;
         background-color: #0076b6;
         border: 2px solid #0076b6;
         transition: background-color 0.3s ease;
-      }
+    }
       
-      .carousel-dots .dot.active {
+    .carousel-dots .dot.active {
         background-color: transparent;
         border: 2px solid #0076b6cc;
-      }
+    }
 
-      .scroll-cards-wrapper::-webkit-scrollbar {
+    .scroll-cards-wrapper::-webkit-scrollbar {
         display: none;
-      }
+    }
+
+    #strategia {
+        scroll-margin-top: 80px;
+    }
+
+    #ai {
+        scroll-margin-top: 70px;
+    }
+
+    #brand {
+        scroll-margin-top: 65px;
+    }
+    
+    #ads {
+        scroll-margin-top: 60px;
+    }
+    
+    #risultati {
+        scroll-margin-top: 60px;
+  }
 }
 
 @media screen and (max-width: 650.5px) {
