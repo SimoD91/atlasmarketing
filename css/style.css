@@ -545,6 +545,10 @@ textarea {
         margin-left: 150px;
         margin-right: 150px;
     }
+
+    .contact100-form-title {
+        line-height: 0.7;
+    }
 }
 
 @media screen and (max-width: 850.5px) {
