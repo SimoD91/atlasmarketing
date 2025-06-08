@@ -325,19 +325,23 @@ h2 {
   }
 
   #ai {
-    scroll-margin-top: 102px;
+    scroll-margin-top: 120px;
   }
 
   #brand {
-    scroll-margin-top: 95px;
+    scroll-margin-top: 120px;
   }
 
   #ads {
-    scroll-margin-top: 95px;
+    scroll-margin-top: 120px;
   }
 
   #risultati {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 120px;
+  }
+
+  #contact {
+    scroll-margin-top: 120px;
   }
 
   .wrap-contact100 {
@@ -423,24 +427,28 @@ textarea {
 
   @media screen and (min-width: 2060.5px) {
     #strategia {
-        scroll-margin-top: 150px;
+        scroll-margin-top: 190px;
       }
 
       #ai {
-        scroll-margin-top: 140px;
+        scroll-margin-top: 190px;
       }
 
       #brand {
-        scroll-margin-top: 130px;
+        scroll-margin-top: 190px;
       }
     
       #ads {
-        scroll-margin-top: 140px;
+        scroll-margin-top: 190px;
       }
     
       #risultati {
-        scroll-margin-top: 140px;
-  }
+        scroll-margin-top: 190px;
+      }
+
+      #contact {
+       scroll-margin-top: 190px;
+      }
 }
 
   @media screen and (min-width: 1800.5px) {
@@ -607,24 +615,28 @@ textarea {
     }
 
     #strategia {
-        scroll-margin-top: 80px;
+        scroll-margin-top: 90px;
     }
 
     #ai {
-        scroll-margin-top: 70px;
+        scroll-margin-top: 90px;
     }
 
     #brand {
-        scroll-margin-top: 65px;
+        scroll-margin-top: 90px;
     }
     
     #ads {
-        scroll-margin-top: 60px;
+        scroll-margin-top: 90px;
     }
     
     #risultati {
-        scroll-margin-top: 60px;
+        scroll-margin-top: 90px;
   }
+
+  #contact {
+    scroll-margin-top: 90px;
+}
 }
 
 @media screen and (max-width: 650.5px) {
@@ -825,5 +837,9 @@ textarea {
 
     .league-spartan-p {
         font-size: 2.2rem;
+    }
+
+    .linknav {
+        font-size: 9px;
     }
 }
