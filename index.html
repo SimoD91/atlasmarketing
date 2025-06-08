@@ -290,6 +290,41 @@
               </div>
             </div>
           </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="wrap-contact100">
+                <form class="contact100-form validate-form">
+                    <span class="contact100-form-title">
+                      Parlaci di <span class="blueTxt">te</span>.</br>
+                      <span class="titleForm2">In pochi giorni riceverai un piano personalizzato, la rotta che seguiremo insieme.</span>
+                    </span>
+                    <div class="wrap-input100 validate-input" data-validate="Il nome è obbligatorio">
+                        <input class="input100" type="text" name="name" placeholder="*Nome">
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Il cognome è obbligatorio">
+                        <input class="input100" type="text" name="name" placeholder="*Cognome">
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Inseire una mail valida: ex@abc.xyz">
+                        <input class="input100" type="text" name="email" placeholder="*Email">
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Il messaggio è obbligatorio">
+                        <textarea class="input100 inputTextArea" name="message" placeholder="*Il tuo messaggio"></textarea>
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
+                    </div>
+                    <div class="container-contact100-form-btn">
+                        <button onclick="sendMail(event)" class="contact100-form-btn">
+                            Contattaci
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
         </div>
     <div id="FooterContainer"></div>
     <script>
@@ -414,6 +449,24 @@
 
     window.addEventListener('resize', updateDots);
   });
+</script>
+<script>
+  function sendMail(event) {
+      event.preventDefault();
+      let name = document.querySelector('[name="name"]').value;
+      let email = document.querySelector('[name="email"]').value;
+      let message = document.querySelector('[name="message"]').value;
+      
+      if (!name || !email || !message) {
+          alert('Per favore, completa tutti i campi.');
+          return;
+      }
+      
+      let subject = encodeURIComponent('Richiesta di contatto');
+      let body = encodeURIComponent(`Nome: ${name}\nEmail: ${email}\nMessaggio: ${message}`);
+      
+      window.location.href = `mailto:atlasmarketing.contact@gmail.com?subject=${subject}&body=${body}`;
+  }
 </script>
 </body>
 </html>
