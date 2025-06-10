@@ -68,7 +68,7 @@ html, body {
     font-optical-sizing: auto;
     font-weight: 900;
     font-style: normal;
-    color: #3230313b;
+    color: #323031 !important;
 }
 
 .linknav:hover {
@@ -425,6 +425,67 @@ textarea {
     padding-bottom: 20px;
 }
 
+footer {
+    background-color: white;
+    border-top: 1px solid rgb(223, 223, 223);
+}
+
+.imgLogoFooter {
+    max-width: 60%;
+}
+
+.footerLogo, footer li{
+    text-align: center;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    color: #323031;
+}
+
+footer a:hover {
+    color: #0077B6;
+}
+
+.rowFooter {
+    justify-content: center;
+    align-items: center;
+}
+
+footer li {
+    margin-top: 16px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #323031;
+}
+
+.underFooter {
+    color: #323031cb;
+    text-align: center;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+.bordered-text {
+    display: inline-block;
+    border-top: 1px solid rgb(223, 223, 223);
+    padding-top: 4px;
+}
+
+.bnn-banner {
+    box-shadow: rgba(0, 0, 0, 0.75) 1px 1px 3px !important;
+}
+
+.bnn-privacy-policy, .bnn-banner-description, .bnn-banner-title {
+    text-align: center;
+}
+
   @media screen and (min-width: 2060.5px) {
     #strategia {
         scroll-margin-top: 190px;
@@ -551,6 +612,16 @@ textarea {
     }
 }
 
+@media screen and (max-width: 937.5px) {
+    footer li {
+        font-size: 12px;
+    }
+
+    .underFooter {
+        font-size: 11px;
+    }
+}
+
 @media screen and (max-width: 850.5px) {
     .contact100-form-btn {
         width: 50%;
@@ -636,11 +707,19 @@ textarea {
     
     #risultati {
         scroll-margin-top: 90px;
-  }
+    }
 
-  #contact {
+    #contact {
     scroll-margin-top: 90px;
-}
+    }
+
+    .imgLogoFooter {
+        max-width: 30%;
+    }
+
+    footer ul {
+        margin-bottom: 0;
+    }
 }
 
 @media screen and (max-width: 650.5px) {
@@ -789,6 +868,11 @@ textarea {
     .contact100-form-btn {
         font-size: 25px;
     }
+
+    .bordered-text {
+        box-shadow: inset 0px 2px 0px 0px #66666614;
+        border-top: 1px solid #e1e1e1;
+    }
 }
 
 @media screen and (max-width: 425.5px) {
@@ -801,6 +885,10 @@ textarea {
         font-size: 1.3rem;
         margin-left: 30px;
         margin-right: 30px;
+    }
+
+    .imgLogoFooter {
+        max-width: 80%;
     }
   }
 
