@@ -472,6 +472,15 @@ footer a {
     font-size: 13px;
 }
 
+.underPnoLink {
+    color: #323031cb;
+    text-align: center;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
 .bordered-text {
     display: inline-block;
     border-top: 1px solid rgb(223, 223, 223);
