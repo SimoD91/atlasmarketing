@@ -715,6 +715,7 @@ footer a {
 
     .imgLogoFooter {
         max-width: 30%;
+        margin-bottom: -15px;
     }
 
     footer ul {
@@ -870,7 +871,7 @@ footer a {
     }
 
     .bordered-text {
-        box-shadow: inset 0px 2px 0px 0px #66666614;
+        box-shadow: inset 0px 1px 0px 0px #66666614;
         border-top: 1px solid #e1e1e1;
     }
 }
