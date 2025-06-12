@@ -481,6 +481,10 @@ footer a {
     font-style: normal;
 }
 
+.privacyP {
+    margin-top: 42px;
+}
+
 .bordered-text {
     display: inline-block;
     border-top: 1px solid rgb(223, 223, 223);
@@ -573,6 +577,17 @@ footer a {
     }
 }
 
+
+@media screen and (max-width: 1293.5px) {
+    .underPnoLink {
+        font-size: 12px;
+    }
+
+    .privacyP {
+        margin-top: 31px;
+    }
+}
+
 @media screen and (max-width: 1199.5px) {
     .container {
         max-width: 100%;
@@ -619,6 +634,14 @@ footer a {
     .contact100-form-title {
         line-height: 0.7;
     }
+
+    .underPnoLink {
+        font-size: 10px;
+    }
+
+    .privacyP {
+        margin-top: 25px;
+    }
 }
 
 @media screen and (max-width: 937.5px) {
@@ -629,11 +652,25 @@ footer a {
     .underFooter {
         font-size: 11px;
     }
+
+    .privacyP {
+        margin-top: 28px;
+    }
+
+    .underPnoLink {
+        font-size: 9px;
+    }
 }
 
 @media screen and (max-width: 850.5px) {
     .contact100-form-btn {
         width: 50%;
+    }
+}
+
+@media screen and (max-width: 789.9px) {
+    .privacyP {
+        margin-top: 39px;
     }
 }
 
@@ -729,6 +766,14 @@ footer a {
 
     footer ul {
         margin-bottom: 0;
+    }
+
+    .privacyP {
+        margin-top: 18px;
+    }
+
+    .rowFooter {
+        align-items: normal;
     }
 }
 
