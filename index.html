@@ -18,7 +18,6 @@
     <script src="scripts/GestioneMasterPage.js"></script>
     <title>Atlas Marketing</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
-    <!--
     <script>
         var _cookieConsent = {
             resources: [
@@ -41,15 +40,15 @@
                 headerFontSize: 22,
                 headerLineHeight: 28,
                 colors: [
-                 '#232323', // Colore di sfondo
-                 'white', // Colore testo
-                 '#fff', // Colore link testuale e pulsanti accetta tutto/salva-Colore enabled pulsantini cookies e pallino not enabled
+                 '#f6f6f6', // Colore di sfondo
+                 '#323031', // Colore testo
+                 '#ededed', // Colore link testuale e pulsanti accetta tutto/salva-Colore enabled pulsantini cookies e pallino not enabled
                  '#191919', // Colore testo pulsanti accetta tutto/salva
-                 'lightgrey', // Colore hover pulsanti accetta tutto/salva-Colore hover enabled pulsantini cookies
-                 '#3f3f3f', // Colore pallino tasto necessary
-                 '#191919', // Colore sfondo pulsantini cookies not enabled/Bordi
-                 'lightgrey', // Colore hover pulsantini cookies not enabled
-                 '#3f3f3f', // Colore pallino pulsantini cookies enabled
+                 '#f6f6f6', // Colore hover pulsanti accetta tutto/salva-Colore hover enabled pulsantini cookies
+                 '#ededed', // Colore pallino tasto necessary
+                 'rgb(0 119 182 / 74%)', // Colore sfondo pulsantini cookies not enabled/Bordi
+                 '#f6f6f6', // Colore hover pulsantini cookies not enabled
+                 'rgb(0 119 182 / 74%)', // Colore pallino pulsantini cookies enabled
                 ],
             },
 
@@ -70,8 +69,7 @@
             },
         };
     </script>
-    <script src="Scripts/cookieconsent.js"></script>
-    -->
+    <script src="scripts/cookieconsent.js"></script>
     <script>
         $(document).ready(function () {
             CaricaMasterPage();
@@ -458,7 +456,7 @@
       let message = document.querySelector('[name="message"]').value;
       
       if (!name || !email || !message) {
-          alert('Per favore, completa tutti i campi.');
+          alert('Compila tutti i campi per favore.');
           return;
       }
       
@@ -468,5 +466,23 @@
       window.location.href = `mailto:atlasmarketing.contact@gmail.com?subject=${subject}&body=${body}`;
   }
 </script>
+<style>
+  .bnn-privacy-policy-link {
+      color: #0077B6 !important;
+      text-decoration: none !important;
+  }
+
+  .bnn-privacy-policy-link:hover {
+    color: #323031 !important;
+  }
+
+  .bnn-banner {
+    border: 1px solid white;
+  }
+
+  .bnn-banner-consent, .bnn-banner-buttons {
+    border-top: 1px solid rgb(0 119 182 / 35%);
+}
+</style>
 </body>
 </html>

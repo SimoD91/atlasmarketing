@@ -497,6 +497,10 @@ footer a {
 
 .bnn-privacy-policy, .bnn-banner-description, .bnn-banner-title {
     text-align: center;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
   @media screen and (min-width: 2060.5px) {
