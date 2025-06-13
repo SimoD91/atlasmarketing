@@ -503,6 +503,31 @@ footer a {
     font-style: normal;
 }
 
+.bodyPrivacy {
+    padding-top: 130px;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    color: #323031;
+    background-color: white;
+    border-bottom: 1px solid #ffffff1a;
+    font-size: 13px;
+}
+
+.bodyPrivacy h4 {
+    font-size: 20px;
+}
+
+.bodyPrivacy h5 {
+    font-size: 15px;
+}
+
+.rowPrivacy {
+    margin-left: 125px;
+    margin-right: 100px;
+}
+
   @media screen and (min-width: 2060.5px) {
     #strategia {
         scroll-margin-top: 190px;
@@ -527,6 +552,15 @@ footer a {
       #contact {
        scroll-margin-top: 190px;
       }
+
+      .bodyPrivacy {
+        margin-top: 30px;
+      }
+
+      .rowPrivacy {
+        margin-left: 185px;
+        margin-right: 150px;
+    }
 }
 
   @media screen and (min-width: 1800.5px) {
@@ -570,6 +604,21 @@ footer a {
     }
 }
 
+
+@media screen and (max-width: 1512.9px) {
+    .rowPrivacy {
+        margin-left: 120px;
+        margin-right: 100px;
+    }
+}
+
+@media screen and (max-width: 1440.9px) {
+    .rowPrivacy {
+        margin-left: 110px;
+        margin-right: 120px;
+    }
+}
+
 @media screen and (max-width: 1400.5px) {
     .league-spartan-p {
         font-size: 5rem;
@@ -580,6 +629,13 @@ footer a {
         margin-right: 340px;
     }
 }
+
+@media screen and (max-width: 1399.5px) {
+    .rowPrivacy {
+        margin-left: 145px;
+        margin-right: 120px;
+    }
+    }
 
 
 @media screen and (max-width: 1293.5px) {
@@ -623,6 +679,19 @@ footer a {
     }
 }
 
+@media screen and (max-width: 1088.9px) {
+    .rowPrivacy {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .bodyPrivacy {
+        padding-top: 120px;
+    }
+}
+
 @media screen and (max-width: 1015.5px) {
     .league-spartan-p {
         margin-top: 160px;
@@ -645,6 +714,12 @@ footer a {
 
     .privacyP {
         margin-top: 25px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .bodyPrivacy {
+        font-size: 15px;
     }
 }
 
@@ -778,6 +853,14 @@ footer a {
 
     .rowFooter {
         align-items: normal;
+    }
+
+    .rowPrivacy {
+        margin-left: 10px;
+    }
+
+    .bodyPrivacy {
+        padding-top: 100px;
     }
 }
 
@@ -948,6 +1031,26 @@ footer a {
 
     .imgLogoFooter {
         max-width: 80%;
+    }
+
+    .rowPrivacy h4 {
+        font-size: 18px;
+    }
+
+    .rowPrivacy h5 {
+        font-size: 13px;
+    }
+
+    .rowPrivacy p {
+        font-size: 13px;
+    }
+
+    .rowPrivacy {
+        margin-right: 10px;
+    }
+
+    .bodyPrivacy {
+        padding-top: 110px;
     }
   }
 
